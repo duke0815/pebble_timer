@@ -256,8 +256,11 @@ static void anim_tick(void *data) {
     if (w->vel > VEL_STOP || w->vel < -VEL_STOP) {
       w->offset += w->vel;
       w->vel = w->vel * 9 / 10;
+      wheel_normalize(w);
       busy = true;
     } else {
+      // Snap back to the row centre. No normalizing here: a button step
+      // starts a full row away and has to slide in without being undone.
       w->vel = 0;
       if (w->offset != 0) {
         int32_t step = w->offset / 3;
@@ -268,7 +271,6 @@ static void anim_tick(void *data) {
         busy = true;
       }
     }
-    wheel_normalize(w);
     layer_mark_dirty(w->layer);
   }
 
