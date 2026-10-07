@@ -1,0 +1,22 @@
+{
+  "name": "pebble-timer",
+  "author": "duke0815",
+  "version": "1.0.0",
+  "keywords": ["pebble-app"],
+  "private": true,
+  "dependencies": {},
+  "pebble": {
+    "displayName": "Timer",
+    "uuid": "6d2b7c1e-4f3a-4c8e-9b1d-2a5e7f0c9d41",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": ["emery"],
+    "watchapp": {
+      "watchface": false
+    },
+    "messageKeys": [],
+    "resources": {
+      "media": []
+    }
+  }
+}
